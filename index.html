@@ -2,11 +2,9 @@
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spinly – Vos roues aléatoires</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Orbitron:wght@700;900&family=Press+Start+2P&family=Share+Tech+Mono&display=swap">
 <style>
 :root{--bg:#fbf6ef;--card:#fff;--ink:#2d2a3e;--mute:#8a8599;--line:#eee6da;--ac:#ff8f7a;--ac2:#b9a6ff;--sh:0 8px 30px rgba(80,60,120,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1c2b;--card:#2a2639;--ink:#f3eefc;--mute:#a49fb8;--line:#3a3550;--sh:0 8px 30px rgba(0,0,0,.35)}}
-:root[data-theme="dark"]{--bg:#1f1c2b;--card:#2a2639;--ink:#f3eefc;--mute:#a49fb8;--line:#3a3550;--sh:0 8px 30px rgba(0,0,0,.35)}
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 'DM Sans',system-ui,sans-serif;min-height:100vh;background-image:radial-gradient(circle at 10% 0,#ffd9cf55,transparent 40%),radial-gradient(circle at 100% 20%,#d8ceff55,transparent 40%)}
 h1,h2,h3,.logo{font-family:'Bricolage Grotesque','DM Sans',sans-serif;margin:0}
@@ -74,9 +72,40 @@ main{max-width:1150px;margin:auto;padding:6px 18px 50px}
 .stage:fullscreen canvas{width:min(92vh,92vw);height:min(92vh,92vw)}
 @media(max-width:820px){.hero,.edit{grid-template-columns:1fr}.hero{text-align:center}.hero p{margin:auto}.cta{justify-content:center}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+
+:root{--fd:'Bricolage Grotesque','DM Sans',sans-serif}
+h1,h2,h3,.logo,.spinbox .go,.titleIn{font-family:var(--fd)}
+.hero h1 em{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.pri{background:linear-gradient(135deg,var(--p1,#ff8f7a),var(--p2,#ff6f9c));color:var(--pon,#fff)}
+.sec{background:linear-gradient(135deg,var(--s1,#b9a6ff),var(--s2,#8fb8ff));color:var(--son,#fff)}
+:root[data-theme="sombre"]{--bg:#1f1c2b;--card:#2a2639;--ink:#f3eefc;--mute:#a49fb8;--line:#3a3550;--sh:0 8px 30px rgba(0,0,0,.35)}
+:root[data-theme="sombre"] body{background-image:radial-gradient(circle at 10% 0,#b9a6ff22,transparent 40%)}
+:root[data-theme="neon"]{--bg:#0b0618;--card:#150d2b;--ink:#f5f0ff;--mute:#9b8fc7;--line:#33206a;--sh:0 0 26px rgba(255,43,214,.28);--ac:#00f0ff;--ac2:#ff2bd6;--p1:#ff2bd6;--p2:#7a3cff;--s1:#00f0ff;--s2:#3c8cff;--son:#04101c;--fd:'Orbitron',sans-serif}
+:root[data-theme="neon"] body{background-image:radial-gradient(circle at 15% 0,#ff2bd633,transparent 45%),radial-gradient(circle at 100% 30%,#00f0ff2e,transparent 45%)}
+:root[data-theme="neon"] .card,:root[data-theme="neon"] .modal{border:1px solid #ff2bd666}
+:root[data-theme="neon"] .pri{box-shadow:0 0 18px #ff2bd699}:root[data-theme="neon"] .sec{box-shadow:0 0 18px #00f0ff77}
+:root[data-theme="arcade"]{--bg:#12122a;--card:#1e1e47;--ink:#fff;--mute:#9aa0d8;--line:#3b3b7a;--sh:5px 5px 0 #000;--ac:#ffd400;--ac2:#ff3b6b;--p1:#ff3b6b;--p2:#ff3b6b;--s1:#3b82ff;--s2:#3b82ff;--fd:'Press Start 2P',monospace}
+:root[data-theme="arcade"] body{background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:28px 28px}
+:root[data-theme="arcade"] .card,:root[data-theme="arcade"] .modal{border-radius:6px;border:3px solid #fff}
+:root[data-theme="arcade"] button,:root[data-theme="arcade"] input,:root[data-theme="arcade"] select,:root[data-theme="arcade"] textarea{border-radius:6px}
+:root[data-theme="arcade"] button{box-shadow:3px 3px 0 #000;border:2px solid #000}
+:root[data-theme="arcade"] .hero h1{font-size:clamp(20px,5vw,34px);line-height:1.35;letter-spacing:0}
+:root[data-theme="arcade"] .modal h2{font-size:clamp(18px,5vw,26px);line-height:1.4;letter-spacing:0}
+:root[data-theme="arcade"] .titleIn{font-size:15px}:root[data-theme="arcade"] .spinbox .go{font-size:15px;letter-spacing:0}
+:root[data-theme="arcade"] .logo{font-size:17px;letter-spacing:0}:root[data-theme="arcade"] h3{font-size:12px}
+:root[data-theme="matrix"]{--bg:#020b05;--card:#06180d;--ink:#c8ffd9;--mute:#5fbf80;--line:#0f4a25;--sh:0 0 22px rgba(0,255,106,.2);--ac:#00ff6a;--ac2:#00c46a;--p1:#00ff6a;--p2:#00b050;--pon:#021a0b;--s1:#0f4a25;--s2:#0a3a1c;--son:#c8ffd9;--fd:'Share Tech Mono',monospace}
+:root[data-theme="matrix"] body{font-family:'Share Tech Mono',monospace;background-image:linear-gradient(#00ff6a0f 1px,transparent 1px);background-size:100% 4px}
+:root[data-theme="matrix"] .card,:root[data-theme="matrix"] .modal{border:1px solid #00ff6a66}
+:root[data-theme="lave"]{--bg:#1a0805;--card:#2b0f0a;--ink:#ffeede;--mute:#d49a82;--line:#5a2214;--sh:0 8px 30px rgba(255,90,31,.2);--ac:#ff5a1f;--ac2:#ffb000;--p1:#ff3d00;--p2:#ffb000;--pon:#1a0805;--s1:#7a1f12;--s2:#c43c1a}
+:root[data-theme="lave"] body{background-image:radial-gradient(circle at 10% 0,#ff5a1f33,transparent 45%),radial-gradient(circle at 100% 30%,#ffb00022,transparent 45%)}
+body.fsmode{overflow:hidden}
+body.fsmode header,body.fsmode .panel,body.fsmode #share{display:none}
+body.fsmode main{padding:0;max-width:none}body.fsmode .edit{display:block}
+body.fsmode .spinbox{position:fixed;inset:0;z-index:15;border-radius:0;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));box-shadow:none}
+body.fsmode .stage{width:min(94vw,62vh,720px)}body.fsmode .titleIn{font-size:clamp(18px,5vw,32px)}
 </style><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#fbf6ef"><link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Spinly"><link rel="icon" href="icon-192.png">
 </head><body>
-<header><button class="logo" id="home"><svg width="30" height="30" viewBox="-50 -50 100 100"><circle r="46" fill="#ffd6cc"/><path d="M0 0 0-46A46 46 0 0 1 40-23Z" fill="#b9a6ff"/><path d="M0 0 40-23A46 46 0 0 1 40 23Z" fill="#9fe3c8"/><path d="M0 0 40 23A46 46 0 0 1 0 46Z" fill="#ffe08a"/><circle r="9" fill="#fff"/></svg>Spinly</button><span class="sp"></span><button class="ghost" id="hWheels">Mes roues</button><button class="ghost" id="theme" title="Thème" aria-label="Changer de thème">◐</button></header>
+<header><button class="logo" id="home"><svg width="30" height="30" viewBox="-50 -50 100 100"><circle r="46" fill="#ffd6cc"/><path d="M0 0 0-46A46 46 0 0 1 40-23Z" fill="#b9a6ff"/><path d="M0 0 40-23A46 46 0 0 1 40 23Z" fill="#9fe3c8"/><path d="M0 0 40 23A46 46 0 0 1 0 46Z" fill="#ffe08a"/><circle r="9" fill="#fff"/></svg>Spinly</button><span class="sp"></span><button class="ghost" id="hWheels">Mes roues</button><select id="themeSel" aria-label="Thème" style="width:auto;padding:8px 12px;border-radius:999px"><option value="clair">☀️ Clair</option><option value="sombre">🌙 Sombre</option><option value="neon">💜 Néon</option><option value="arcade">🕹️ Arcade</option><option value="matrix">🟩 Matrix</option><option value="lave">🔥 Lave</option></select></header>
 <main>
 <section class="view on" id="vHome"><div class="hero"><div><h1>Laissez le <em>hasard</em> décider.</h1><p>Créez vos roues, ajoutez vos choix, lancez : Spinly tire au sort avec élégance. Tout reste dans votre navigateur, sans compte.</p><div class="cta"><button class="pri" id="bNew">Créer une roue</button><button class="sec" id="bMy">Mes roues</button></div><div class="steps"><div><b>1. Ajoutez</b>vos choix ou un modèle</div><div><b>2. Lancez</b>la roue tourne et ralentit</div><div><b>3. Découvrez</b>le résultat sous le pointeur</div></div></div><div class="stage" id="demoStage"><div class="ptr"></div><canvas id="demo"></canvas></div></div></section>
 <section class="view" id="vEdit"><div class="edit"><div class="card spinbox"><input class="titleIn" id="title" maxlength="40" aria-label="Titre de la roue"><div class="stage" id="stage"><div class="ptr" id="ptr"></div><canvas id="cv"></canvas></div><button class="pri go" id="go">LANCER LA ROUE</button><div class="row" style="justify-content:center;margin-top:14px;flex-wrap:wrap"><button class="ghost" id="fs">⤢ Plein écran</button><button class="ghost" id="share">🔗 Partager</button></div></div>
@@ -90,6 +119,7 @@ main{max-width:1150px;margin:auto;padding:6px 18px 50px}
 <div class="toast" id="toast" role="status"></div>
 <script>
 const PALS={"Pastel":["#ffb5a7","#fcd5ce","#b9a6ff","#a0e7e5","#b4f8c8","#ffe08a","#ffaebc","#a0c4ff"],"Bonbon":["#ff9ec7","#ffc8dd","#cdb4ff","#bde0fe","#ffafcc","#e2c2ff","#a2d2ff","#ffd6e8"],"Océan":["#8fd3f4","#84fab0","#a1c4fd","#7ee8fa","#b2f7ef","#9bb5ff","#6fd6c9","#c2e9fb"],"Forêt":["#b7e4c7","#95d5b2","#d8f3dc","#c9e4a5","#a7c957","#cfe1b9","#74c69d","#e9f5db"],"Soleil":["#ffd166","#ffb677","#ff9e7a","#ffe5a0","#f8c291","#ffcad4","#ffb347","#fff1b8"]};
+PALS["Néon"]=["#ff6ad5","#c774e8","#ad8cff","#8795e8","#94d0ff","#00f0ff","#7dffb3","#fff176"];PALS["Arcade"]=["#ff3b6b","#ffd400","#3bff8f","#3b82ff","#ff8a3b","#b13bff","#3bf0ff","#ff7ad9"];PALS["Matrix"]=["#00ff6a","#7dff9b","#b8ffc9","#00c46a","#6cf59a","#a3ffcf","#35e08a","#d4ffe3"];PALS["Lave"]=["#ff5a1f","#ff8a3d","#ffb000","#ffd166","#e63900","#ff7f50","#ffa94d","#ffc971"];
 const TPL={"🍕 Repas":["Pizza","Sushi","Pâtes","Burger","Salade","Tacos","Curry","Crêpes"],"🎈 Activités":["Cinéma","Balade","Jeux de société","Pique-nique","Piscine","Musée","Vélo","Cuisine"],"🎲 Jeux":["Cartes","Échecs","Time's Up","Pictionary","Loup-garou","Petits chevaux","Scrabble","Uno"],"🧒 Prénoms":["Emma","Lucas","Léa","Hugo","Chloé","Nathan","Inès","Louis"],"🔥 Défis":["Chanter une chanson","10 pompes","Imiter un animal","Parler en rimes","Danser 30 s","Dessiner les yeux fermés","Raconter une blague","Mime"],"📚 Révisions":["Maths","Français","Histoire","Anglais","Sciences","Géographie","Physique","Philosophie"],"🤔 Décisions":["Oui","Non","Peut-être","Redemande plus tard"]};
 const $=s=>document.querySelector(s),KEY='spinly:v1',TAU=Math.PI*2;
 let S={wheels:[],cur:null,hist:[],snd:true},rot=0,busy=false,lastIdx=-1;
@@ -119,7 +149,7 @@ if(p<1)return requestAnimationFrame(f);rot=((rot%TAU)+TAU)%TAU;const win=idxAt(w
 S.hist.unshift({w:w.title,r:name,t:Date.now()});S.hist=S.hist.slice(0,60);if(w.rm){w.items.splice(win,1);}save();draw($('#cv'),w,rot);renderAll(false);show(name)})(t0)}
 function show(name){$('#res').textContent=name;$('#ov').classList.add('on');beep(660,.15,.06);setTimeout(()=>beep(880,.25,.06),130);setTimeout(()=>beep(1040,.35,.06),260);confetti()}
 function confetti(){const c=['#ff8f7a','#b9a6ff','#9fe3c8','#ffe08a','#ff9ec7','#8fb8ff'];for(let i=0;i<60;i++){const d=document.createElement('i');d.className='conf';d.style.left=rnd()*100+'vw';d.style.background=c[i%6];d.style.borderRadius=i%3?'2px':'50%';d.style.animationDuration=1.6+rnd()*1.6+'s';d.style.animationDelay=rnd()*.4+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),4000)}}
-function view(v){document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on',e.id===v));scrollTo(0,0);if(v==='vEdit')renderAll();if(v==='vWheels')renderWheels();if(v==='vHome')drawDemo()}
+function view(v){if(document.body.classList.contains("fsmode"))fsToggle(false);document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on',e.id===v));scrollTo(0,0);if(v==='vEdit')renderAll();if(v==='vWheels')renderWheels();if(v==='vHome')drawDemo()}
 function open(id){S.cur=id;save();view('vEdit')}
 function newWheel(items,title){const w=mk(title||'Ma roue',items||[]);S.wheels.unshift(w);open(w.id)}
 function renderList(){const w=W(),l=$('#list'),cl=cols(w),tot=w.items.reduce((a,i)=>a+i.w,0)||1;l.innerHTML='';$('#cnt').textContent=w.items.length?`(${w.items.length})`:'';
@@ -156,11 +186,18 @@ Object.keys(PALS).forEach(p=>{const o=document.createElement('option');o.textCon
 $('#pal').onchange=e=>{W().pal=e.target.value;save();renderAll()};$('#rm').onchange=e=>{W().rm=e.target.checked;save()};$('#snd').onchange=e=>{S.snd=e.target.checked;save();if(S.snd)beep(700)};
 Object.keys(TPL).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.className='ghost';b.onclick=()=>{const w=W();w.items=TPL[k].map(t=>({t,w:1}));w.title=k.replace(/^\S+\s/,'');save();renderAll();toast('Modèle « '+w.title+' » chargé.')};$('#tpl').appendChild(b)});
 $('#clrH').onclick=()=>{S.hist=[];save();renderHist()};$('#share').onclick=shareLink;
-$('#fs').onclick=()=>{const s=$('#stage');try{if(document.fullscreenElement)document.exitFullscreen();else s.requestFullscreen().catch(()=>toast('Plein écran indisponible ici.'))}catch(e){toast('Plein écran indisponible ici.')}};
-document.onfullscreenchange=()=>{const w=W();if(w)requestAnimationFrame(()=>draw($('#cv'),w,rot))};
-$('#stage').onclick=()=>{if(document.fullscreenElement)spin()};
-$('#theme').onclick=()=>{const d=document.documentElement,dk=getComputedStyle(d).getPropertyValue('--bg').trim()==='#1f1c2b';d.dataset.theme=dk?'light':'dark';try{localStorage.setItem('spinly:theme',d.dataset.theme)}catch(e){}};
-try{const t=localStorage.getItem('spinly:theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+function fsToggle(on){const b=document.body;on=on===undefined?!b.classList.contains('fsmode'):on;b.classList.toggle('fsmode',on);$('#fs').textContent=on?'✕ Quitter le plein écran':'⤢ Plein écran';
+const d=document.documentElement;try{if(on&&d.requestFullscreen&&!document.fullscreenElement)d.requestFullscreen().catch(()=>{});else if(!on&&document.fullscreenElement)document.exitFullscreen()}catch(e){}
+scrollTo(0,0);setTimeout(()=>{const w=W();if(w)draw($('#cv'),w,rot)},60)}
+$('#fs').onclick=()=>fsToggle();
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&document.body.classList.contains('fsmode'))fsToggle(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('fsmode')&&!$('#ov').classList.contains('on'))fsToggle(false)});
+const THEMES=['clair','sombre','neon','arcade','matrix','lave'];
+function setTheme(t,sv){if(!THEMES.includes(t))t='clair';document.documentElement.dataset.theme=t;$('#themeSel').value=t;const m=document.querySelector('meta[name=theme-color]');if(m)m.content=getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();if(sv)try{localStorage.setItem('spinly:theme',t)}catch(e){}}
+let th0=null;try{th0=localStorage.getItem('spinly:theme')}catch(e){}
+if(th0==='light')th0='clair';if(th0==='dark')th0='sombre';
+setTheme(th0||(matchMedia('(prefers-color-scheme:dark)').matches?'sombre':'clair'));
+$('#themeSel').onchange=e=>setTheme(e.target.value,true);
 addEventListener('resize',()=>{const w=W();if($('#vEdit').classList.contains('on')&&w)draw($('#cv'),w,rot)});
 if(importHash())view('vEdit');else drawDemo();
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
